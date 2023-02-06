@@ -1,0 +1,36 @@
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+         int res [] = new int[n*2];
+        int arr1 [] = new int[n];
+        int arr2 [] = new int[n];
+        for(int i = 0 ; i<n ; i++)
+        {
+            arr1[i] = nums[i];
+        }
+        int j = 0;
+        for(int i = n; i<n*2;i++)
+        {
+            arr2[j] = nums[i];
+            j++;
+        }
+        int k = 0;
+        int y = 0, z = 0;
+        for(int i = 0; i<n*2 ; i++)
+        {
+            if(i%2 == 0)
+            {
+                res[k] = arr1[y];
+                y++;
+                k++;
+            }
+            else
+            {
+                res[k] = arr2[z];
+                z++;
+                k++;
+            }
+        }
+        return res;
+        
+    }
+}
